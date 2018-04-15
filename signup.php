@@ -35,10 +35,16 @@
 					$insert_sql = "INSERT INTO users(username, password) VALUES('" . $_POST['user'] . "', '" . $hashed_pwd . "');";
 
 					$mysqli->query($insert_sql);
+					$user_sql = "SELECT * FROM users WHERE username = '" . $_POST['user']  . "';" ;
+
+					// User entry
+					$result = ($mysqli->query($user_sql))->fetch_assoc();
+
 					$mysqli->close();
 
 					// Set up session variables
 					$_SESSION['username'] = $_POST['user'];
+					$_SESSION['user_id'] = $result['id'];
 					$_SESSION['logged_in'] = true;
 
 					header('Location: frontpage.php');

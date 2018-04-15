@@ -28,6 +28,7 @@
 			if($hashed_pwd == $entry["password"]) {
 				$_SESSION['username'] = $_POST['user'];
 				$_SESSION['logged_in'] = true;
+				$_SESSION['user_id'] = $entry['id'];
 
 				header('Location: frontpage.php');
 			} else {

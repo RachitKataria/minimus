@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "config.php";
 
 // Define top stories endpoint
 define('HACKER_NEWS_ENDPOINT', 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
