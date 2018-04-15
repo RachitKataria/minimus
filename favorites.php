@@ -267,7 +267,17 @@
                 <button class="trash" id="<?php echo $id ?>"></button>
             </div>
             <div class="d-flex flex-column">
-                <div class="p-1 title"><a href="<?php echo $url; ?>" target="_blank"><?php echo $title; ?></a></div>
+                <div class="p-1 title">
+                    <a href="<?php echo $url; ?>" target="_blank"><?php echo $title; ?></a>
+
+                    <?php 
+                        // Retrieve host and parse out www
+                        $parsed_url = parse_url($url)["host"];
+                        $final_url = preg_replace("~^www\.~", '', $parsed_url);
+                    ?>
+
+                    <a href="<?php echo $url; ?>" target="_blank" style="color: #78787B; font-size: 15px;"><?php echo " (" . $final_url . ")"; ?></a>
+                </div>
                 <div class="p-1 author">by <b><?php echo $author; ?></b></div>
             </div>
         </div>

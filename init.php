@@ -1,6 +1,10 @@
 <?php
 require "config.php";
 
+if(!isset($_SESSION['logged_in'])) {
+	$_SESSION['logged_in'] = false;
+}
+
 // Define top stories endpoint
 define('HACKER_NEWS_ENDPOINT', 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
 
