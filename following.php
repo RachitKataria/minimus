@@ -22,7 +22,7 @@
         $result = $mysqli->query($unfollow_sql);
 
         if($result) {
-            $message = "User successfully deleted";
+            $message = "user successfully unfollowed";
         }
     }
 
@@ -59,7 +59,17 @@
         .btn {
             background-color: #ee6f2e;
             color: #ffffff;
+            width: 200px;
         }
+
+        .fixed-select {
+            height: 28px;
+        }
+
+        select {
+            visibility: hidden;
+        }
+
     </style>
 
 </head>
@@ -68,11 +78,12 @@
     $(document).ready(function() 
     {
         $('.user-select').select2({
-            placeholder: "Select a user"
+            placeholder: "select a user"
         });
     });
 
     function selectDidChange() {
+        console.log($('.user-select').height());
         // Enable unfollow button
         var unfollow_button = document.querySelector(".unfollow");        
         unfollow_button.disabled = false;
@@ -97,22 +108,31 @@
     <br>
     <div class="container text-center select-wrapper">
         <form class="d-inline" method="post" action="following.php">
-        <select class="user-select js-states form-control" name="user_id" onchange="selectDidChange()">
-            <option></option>
-            <?php while($row = $results->fetch_assoc()) : ?>
-                <option value="<?php echo $row["id"]; ?>"><?php echo $row["username"]; ?></option>
-            <?php endwhile; ?>
-        </select>
+        <div class="fixed-select">
+            <select class="user-select js-states form-control" name="user_id" onchange="selectDidChange()">
+                <option></option>
+                <?php while($row = $results->fetch_assoc()) : ?>
+                    <option value="<?php echo $row["id"]; ?>"><?php echo $row["username"]; ?></option>
+                <?php endwhile; ?>
+            </select>
+        </div>
         <br><br>
         <div class="text">
             <?php if(isset($message)) echo $message; ?>
+            <br>
+            <br>
         </div>
-            <a href="" class="btn view disabled" id="view_anchor">View user's favorites</a>
-            <button type="submit" class="btn unfollow" disabled="true">Unfollow user</button>
+        <div>
+            <a href="" class="btn view disabled" id="view_anchor">view user's favorites</a>
+        </div>
+        <div>
+            <br>
+            <button type="submit" class="btn unfollow" disabled="true">unfollow user</button>
+        </div>
         </form>
         <div>
             <br>
-            <a href="follow_new.php" class="btn">Follow a new user</a>
+            <a href="follow_new.php" class="btn">follow a new user</a>
         </div>
     </div>
 </body>

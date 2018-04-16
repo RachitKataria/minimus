@@ -66,7 +66,7 @@
             background-color: #ee6f2e;
             color: #ffffff;
         }
-        
+
     </style>
 
 </head>
@@ -161,6 +161,7 @@
     <?php endif; ?>
 
     <div class="container text-center">
+        <br>
         <a href="following.php" class="btn btn-default">Back to followed users</a>
     </div>
 </body>

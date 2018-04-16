@@ -14,7 +14,7 @@
 		$insert_sql = "INSERT INTO users_has_followers(users_id, followers_id) VALUES(" . $_POST["id"] . ", " . $_SESSION["user_id"] . ");";
 		$mysqli->query($insert_sql);
 		
-        $message = "Successfully followed user!";
+        $message = "successfully followed user";
 	}
 
 	// List only non-followed users
@@ -52,13 +52,25 @@
     	width: 400px;
     }
 
+    .back {
+    	width: 500px;
+    }
+
+    select {
+        visibility: hidden;
+    }
+
+    .fixed-select {
+    	height: 28px;
+    }
+
     </style>
 
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
 	    	$('.user-select').select2({
-	    		placeholder: "Select a user"
+	    		placeholder: "select a user"
 	    	});
 		});
 
@@ -75,24 +87,28 @@
 <!-- Navbar -->
 <?php require 'navbar.php'; ?>
 
+<br>
 <div class="container text-center select-wrapper"> 
 	<form action="follow_new.php" id="form" method="post">
-		<select class="user-select js-states form-control" name="id" onchange="updateFollowButton()">
-			<option></option>
-		  	<?php while($row = $results->fetch_assoc()) : ?>
-				<option value="<?php echo $row["id"]; ?>"><?php echo $row["username"]; ?></option>
-			<?php endwhile; ?>   
-		</select>
+		<div class="fixed-select">
+			<select class="user-select js-states form-control" name="id" onchange="updateFollowButton()">
+				<option></option>
+			  	<?php while($row = $results->fetch_assoc()) : ?>
+					<option value="<?php echo $row["id"]; ?>"><?php echo $row["username"]; ?></option>
+				<?php endwhile; ?>   
+			</select>
+		</div>
         <div>
+        	<br>
             <?php if(isset($message)) echo $message; ?>
         </div>
         <br>
-		<button type="submit" class="btn follow" disabled="true">Follow user!</button>
+		<button type="submit" class="btn follow" disabled="true">follow user</button>
 	</form>
 </div>
-<div class="container text-center"> 
+<div class="container text-center back"> 
 	<br>
-	<a href="following.php" class="btn">Back to followed users</a>
+	<a href="following.php" class="btn">back to followed users</a>
 </div>
 </body>
 </html>

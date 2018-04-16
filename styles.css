@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 #nav-bg {
     background-color: #ee6f2e;
 }
@@ -10,7 +12,7 @@
 
 body {
     color: #1E1E24;
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
 }
 
 .abs-center-x {
