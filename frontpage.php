@@ -15,187 +15,25 @@
 
 <head>
     <title>minimus</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+
     <style type="text/css">
-    #nav-bg {
-        background-color: #ee6f2e;
-    }
-
-    .navbar {
-        color: #ffffff;
-        box-shadow: 0 4px 10px 0px #999;
-        margin-bottom: 20px;
-    }
-
-    body {
-        color: #1E1E24;
-        font-family: Raleway;
-    }
-
-    .abs-center-x {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .title {
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    .author {
-        font-weight: lighter;
-    }
-
-    .points {
-        color: #ee6f2e;
-        font-size: 18px;
-        min-width: 50px;
-        text-align: center;
-    }
-
-    .article {
-        width: 80%;
-        background-color: #f6f6f0;
-        margin-bottom: -1px;
-        margin-left: auto;
-        margin-right: auto;
-        border: 1px solid #78787B;
-    }
-
-    .article a {
-        color: #1E1E24;
-    }
-
-    .article a:hover {
-        text-decoration: none;
-        color: #1E1E24;
-    }
-
-    .article a:visited {
-        text-decoration: none;
-        color: #78787B;
-    }
-
-    .load {
-        margin: 10px auto 10px auto;
-        width: 80%;
-        background-color: #ee6f2e;
-        color: #ffffff;
-    }
-
-    .load a {
-        height: 100%;
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer {
-        margin-bottom: 10px;
-    }
-
-    a {
-        color: #ffffff;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-    a:visited {
-        color: #ffffff;
-    }
-
-    .nav-link a {
-        color: #d8d8d8;
-    }
-
-    .nav-link a:hover {
-        color: #ffffff;
-    }
-
-    .button-wrap {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-    }
-
-    .heart {
-        margin: 0 auto;
-        border: none;
-        outline: none;
-        background: url('heart.png') center no-repeat;
-        background-size: 100% 100%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .heart:focus {
-        outline: none;
-        cursor: pointer;
-    }
-
-    .heart-filled {
-        background: url('heart_filled.png') center no-repeat;
-        background-size: 100% 100%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .top a {
-        color: #ffffff;
-    }
-
+        .top a {
+            color: #ffffff;
+        }
     </style>
 </head>
 
+
 <body>
     <!-- Navbar -->
-    <nav class="navbar sticky-top" id="nav-bg">
-        <div class="container-fluid">
-            <div class="nav navbar-nav navbar-brand abs-center-x header">
-                <a href="frontpage.php">minimus</a>
-            </div>
-            <?php if(!$_SESSION["logged_in"]): ?>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item nav-link">
-                        <a href="login.php">login</a>
-                    </li>
-                </ul>
-            <?php else: ?>
-                <ul class="navbar-nav ml-auto flex-row">
-                    <li class="nav-item nav-link">
-                        <?php echo $_SESSION["username"]; ?> |&nbsp; 
-                    </li>
-                    <li class="nav-item nav-link top">
-                        <a href="frontpage.php">top&nbsp;</a> 
-                    </li>
-                    <li class="nav-item nav-link">
-                        |&nbsp;
-                    </li>
-                    <li class="nav-item nav-link">
-                        <a href="favorites.php">favorites&nbsp;</a> 
-                    </li>
-                    <li class="nav-item nav-link">
-                        |&nbsp;
-                    </li>
-                    <li class="nav-item nav-link">
-                        <a href="<?php echo $page_url . "?logout=true"; ?>">logout</a>
-                    </li>
-                </ul>
-            <?php endif; ?>
-        </div>
-    </nav>
+    <?php require 'navbar.php' ?>
+
     <!-- Rows for articles -->
     <?php for($i = $starting_post; $i < $starting_post + $posts_per_page and $i < $total_posts; ++$i): ?>
         <?php
@@ -238,7 +76,7 @@
                         exit();
                     }
 
-                    $sql = "SELECT * FROM articles WHERE id = " . $id . " AND users_id = " . $_SESSION["user_id"] . ";";
+                    $sql = "SELECT articles_id FROM users_has_articles WHERE articles_id = " . $id . " AND users_id = " . $_SESSION["user_id"] . ";";
                     $result = $mysqli->query($sql);
                     $filled = "";
 

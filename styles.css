@@ -1,0 +1,165 @@
+#nav-bg {
+    background-color: #ee6f2e;
+}
+
+.navbar {
+    color: #ffffff;
+    box-shadow: 0 4px 10px 0px #999;
+    margin-bottom: 20px;
+}
+
+body {
+    color: #1E1E24;
+    font-family: Raleway;
+}
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.author {
+    font-weight: lighter;
+}
+
+.points {
+    color: #ee6f2e;
+    font-size: 18px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.article {
+    width: 80%;
+    background-color: #f6f6f0;
+    margin-bottom: -1px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #78787B;
+}
+
+.article a {
+    color: #1E1E24;
+}
+
+.article a:hover {
+    text-decoration: none;
+    color: #1E1E24;
+}
+
+.article a:visited {
+    text-decoration: none;
+    color: #78787B;
+}
+
+.load {
+    margin: 10px auto 10px auto;
+    width: 80%;
+    background-color: #ee6f2e;
+    color: #ffffff;
+}
+
+.load a {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.footer {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+.nav-link a {
+    color: #d8d8d8;
+}
+
+.nav-link a:hover {
+    color: #ffffff;
+}
+
+.button-wrap {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.heart {
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    background: url('heart.png') center no-repeat;
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.heart:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+.heart-filled {
+    background: url('heart_filled.png') center no-repeat;
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.trash {
+    margin: 0 auto;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background: url('trash.png') center no-repeat;
+    background-size: 100% 100%;
+    width: 24px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.trash:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+.trash:hover {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background: url('trash_hover.png') center no-repeat;
+    background-size: 100% 100%;
+    width: 24px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.btn {
+    width: 50%;
+    background-color: #ee6f2e;
+    color: #ffffff;
+}

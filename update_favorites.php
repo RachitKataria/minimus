@@ -9,10 +9,10 @@
 	}
 
 	if($_GET["added"] == "true") {
-		$user_sql = "INSERT INTO articles(id, users_id) VALUES('" . $_GET['id'] . "', '" . $_SESSION["user_id"] . "');";
+		$user_sql = "INSERT INTO users_has_articles(users_id, articles_id) VALUES(" . $_SESSION["user_id"] . ", " . $_GET['id'] . ");";
 
 	} else {
-		$user_sql = "DELETE FROM articles WHERE users_id = " . $_SESSION["user_id"] . " AND id = " . $_GET['id'] . ";";
+		$user_sql = "DELETE FROM users_has_articles WHERE users_id = " . $_SESSION["user_id"] . " AND articles_id = " . $_GET['id'] . ";";
 	}
 
 	$result = $mysqli->query($user_sql);
