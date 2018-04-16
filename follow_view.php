@@ -18,7 +18,7 @@
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     
     $total_posts = $results->num_rows;    
-
+    $i = -1;
     $posts_per_page = 20;
     $starting_post = 0;
     $max_pages = ceil($total_posts / $posts_per_page);
@@ -83,6 +83,7 @@
     <!-- Rows for articles -->
     <?php while ( $post = $results->fetch_assoc() ) : ?>
         <?php
+            $i++;
             // Get post
             curl_setopt($curl, CURLOPT_URL, "https://hacker-news.firebaseio.com/v0/item/" . $post["id"] . ".json?print=pretty");
             $response = curl_exec($curl);
@@ -101,14 +102,13 @@
             }
 
             $url = $response_decoded["url"];
-            $score = $response_decoded["score"];
             $title = $response_decoded["title"];
             $author = $response_decoded["by"];   
             $id = $response_decoded["id"];
         ?>
         
         <div class="d-flex align-items-center flex-row article" id="<?php echo $id ?>">
-            <div class="points"><?php echo $score; ?></div>
+            <div class="number"><?php echo strval($i + 1) . "."; ?></div>
             <?php if($_SESSION["logged_in"]) : ?>
                 <?php 
                     // Check if id is in favorites

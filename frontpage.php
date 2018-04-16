@@ -57,14 +57,13 @@
             }
 
             $url = $response_decoded["url"];
-            $score = $response_decoded["score"];
             $title = $response_decoded["title"];
             $author = $response_decoded["by"];   
             $id = $response_decoded["id"];
         ?>
         
         <div class="d-flex align-items-center flex-row article">
-            <div class="points"><?php echo $score; ?></div>
+            <div class="number"><?php echo strval($i + 1) . "." ?></div>
             
             <?php if($_SESSION["logged_in"]) : ?>
                 <?php 
