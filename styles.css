@@ -16,7 +16,7 @@ body {
 }
 
 .abs-center-x {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -90,6 +90,14 @@ a:visited {
     color: #ffffff;
 }
 
+.navbar li {
+    color: #ffffff !important;
+}
+
+.nav-item {
+    text-align: right;
+}
+
 .nav-link a {
     color: #d8d8d8;
 }
@@ -111,7 +119,7 @@ a:visited {
     margin: 0 auto;
     border: none;
     outline: none;
-    background: url('heart.png') center no-repeat;
+    background: url('assets/heart.png') center no-repeat;
     background-size: 100% 100%;
     width: 40px;
     height: 40px;
@@ -124,7 +132,7 @@ a:visited {
 }
 
 .heart-filled {
-    background: url('heart_filled.png') center no-repeat;
+    background: url('assets/heart_filled.png') center no-repeat;
     background-size: 100% 100%;
     width: 40px;
     height: 40px;
@@ -136,7 +144,7 @@ a:visited {
     border: none;
     overflow: hidden;
     outline: none;
-    background: url('trash.png') center no-repeat;
+    background: url('assets/trash.png') center no-repeat;
     background-size: 100% 100%;
     width: 24px;
     height: 30px;
@@ -153,7 +161,7 @@ a:visited {
     border: none;
     overflow: hidden;
     outline: none;
-    background: url('trash_hover.png') center no-repeat;
+    background: url('assets/trash_hover.png') center no-repeat;
     background-size: 100% 100%;
     width: 24px;
     height: 30px;
@@ -164,4 +172,34 @@ a:visited {
     width: 50%;
     background-color: #ee6f2e;
     color: #ffffff;
+}
+
+.login {
+    width: 400px;
+}
+
+.signup {
+    width: 400px;
+}
+
+.sign-up {
+    margin-top: 20px;
+}
+
+.sign-up a {
+    color: #ee6f2e;
+}
+
+.sign-up a:hover {
+    text-decoration: none;
+    color: #ee6f2e;
+}
+
+.all {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.error {
+    color: #ff0033;
 }

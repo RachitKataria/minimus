@@ -45,49 +45,18 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 
     <style type="text/css">
     	html, body {
     		background-color: #f6f6f0;
-    		font-family: Raleway;
     		height: 100%;
     	}
-
-    	.login {
-    		width: 400px;
-    	}
-
-    	.btn {
-    		width: 50%;
-    		background-color: #ee6f2e;
-    		color: #ffffff;
-    	}
-
-    	.sign-up {
-    		margin-top: 20px;
-    	}
-
-    	.sign-up a {
-    		color: #ee6f2e;
-    	}
-
-    	.sign-up a:hover {
-    		text-decoration: none;
-    		color: #ee6f2e;
-    	}
-
-    	.all {
-    		margin-top: auto;
-    		margin-bottom: auto;
-    	}
-
-    	.error {
-    		color: #ff0033;
-    	}
-
     </style>
 </head>
 <body>
