@@ -8,7 +8,7 @@
         exit();
     }
 
-    $user_sql = "SELECT articles_id as id FROM users_has_articles WHERE users_id = " . $_SESSION["user_id"]. ";";
+    $user_sql = "SELECT articles_id as id FROM users_has_articles WHERE users_id = " . $_SESSION["user_id"]. " ORDER BY timestamp DESC;";
     $results = $mysqli->query($user_sql);
 
     $curl = curl_init();

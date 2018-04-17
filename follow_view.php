@@ -10,7 +10,7 @@
 
     // TODO: CHECK TO MAKE SURE YOU ARE FOLLOWING THIS USER
 
-    $user_sql = "SELECT articles_id as id FROM users_has_articles WHERE users_id = " . $_GET["id"] . ";";
+    $user_sql = "SELECT articles_id as id FROM users_has_articles WHERE users_id = " . $_GET["id"] . " ORDER BY timestamp DESC;";
     $results = $mysqli->query($user_sql);
 
     $curl = curl_init();
