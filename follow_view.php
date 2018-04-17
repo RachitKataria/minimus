@@ -50,6 +50,7 @@
 
 <head>
     <title>view followed favorites</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="import" href="header.html">
 
     <style type="text/css">

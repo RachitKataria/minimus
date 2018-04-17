@@ -46,8 +46,9 @@
 <head>
 	<title>Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="assets/favicon.png">
+	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
@@ -64,7 +65,7 @@
 		<div class="col-sm-12 my-auto"> 
 			<div class="row justify-content-center icon">
 				<a href="frontpage.php">
-					<img src="favicon.png" width="80px" height="80px">
+					<img src="assets/favicon.png" width="80px" height="80px">
 				</a>
 			</div>
 			<!-- Log in info -->

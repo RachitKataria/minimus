@@ -49,6 +49,8 @@
 <head>
     <title>favorites</title>
     <link rel="import" href="header.html">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
     <style type="text/css">
         .favorites a {
             color: #ffffff;
