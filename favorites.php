@@ -135,7 +135,21 @@
                 success: function(data) {
                     console.log(data);
                     var element = document.getElementById(button.id);
+                    var numberRemoved = element.firstElementChild.innerHTML.replace('.', '');
+ 
+                    var parent = element.parentNode;
                     element.parentNode.removeChild(element);
+
+                    for (var child of parent.children) {
+                        if(child.classList.contains("article")) {
+                            var number = child.firstElementChild.innerHTML.replace('.', '');
+                            
+                            if(number > numberRemoved) {
+                                number -= 1;
+                                child.firstElementChild.innerHTML = number + ".";  
+                            }     
+                        }
+                    }
                 }
             });
 

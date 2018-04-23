@@ -54,7 +54,7 @@
     <link rel="import" href="header.html">
 
     <style type="text/css">
-        .favorites a {
+        .following a {
             color: #ffffff;
         }
 

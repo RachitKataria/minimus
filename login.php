@@ -57,42 +57,42 @@
     	html, body {
     		background-color: #f6f6f0;
     		height: 100%;
+    		width: 100%;
     	}
     </style>
 </head>
 <body>
 	<div class="row h-100">
-		<div class="col-sm-12 my-auto"> 
-			<div class="row justify-content-center icon">
-				<a href="frontpage.php">
-					<img src="assets/favicon.png" width="80px" height="80px">
-				</a>
-			</div>
-			<!-- Log in info -->
+		<div class="col-sm-12 my-auto">
 			<div class="container login text-center">
-				<br>
-		  		<div class="text-center"><h2>Welcome Back</h2></div>
-		  		<hr>
-			  	<form action="login.php" method="post">
-				    <div class="form-group">
-				    	<input type="username" class="form-control" id="user" placeholder="Username" name="user">
-				    </div>
-				    <div class="form-group">
-				      	<input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd">
-				    </div>
-				    <?php if(isset($error)): ?>
-				    	<div class="error">
-				    		<?php echo $error; ?>
-				    	</div>
-				    	<br>
-				    <?php endif; ?>
-					<button type="submit" class="btn btn-default">Sign in</button>
-		  		</form>
-			</div>
-			<!-- Sign up link -->
-			<div class="container text-center sign-up">
-				<div>Don't have an account? <a href="signup.php">Sign up</a></div>
-			</div>
+			<a href="frontpage.php">
+				<img src="assets/favicon.png" width="80px" height="80px">
+			</a>
+		</div>
+		<!-- Log in info -->
+		<div class="container-fluid login text-center">
+			<br>
+	  		<div class="text-center"><h2>Welcome Back</h2></div>
+	  		<hr>
+		  	<form action="login.php" method="post">
+			    <div class="form-group">
+			    	<input type="username" class="form-control" id="user" placeholder="Username" name="user">
+			    </div>
+			    <div class="form-group">
+			      	<input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd">
+			    </div>
+			    <?php if(isset($error)): ?>
+			    	<div class="error">
+			    		<?php echo $error; ?>
+			    	</div>
+			    	<br>
+			    <?php endif; ?>
+				<button type="submit" class="btn btn-default">Sign in</button>
+	  		</form>
+		</div>
+		<!-- Sign up link -->
+		<div class="container-fluid login text-center sign-up">
+			<div>Don't have an account? <a href="signup.php">Sign up</a></div>
 		</div>
 	</div>
 </body>

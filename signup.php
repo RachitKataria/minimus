@@ -78,8 +78,8 @@
 </head>
 <body>
 	<div class="row h-100">
-		<div class="col-sm-12 my-auto"> 
-			<div class="row justify-content-center icon">
+		<div class="col-sm-12 my-auto">
+			<div class="container signup text-center">
 				<a href="frontpage.php">
 					<img src="assets/favicon.png" width="80px" height="80px">
 				</a>
